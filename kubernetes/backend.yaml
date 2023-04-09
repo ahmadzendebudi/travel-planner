@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: travel-planner-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: travel-planner-backend
+      tier: backend
+  template:
+    metadata:
+      labels:
+        app: travel-planner-backend
+        tier: backend
+    spec:
+      containers:
+      - name: travel-planner-backend
+        image: zendebudi/travel-planner-backend
+        env:
+        - name: MYSQL_DB_HOST
+          value: "mysql-service"
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: travel-planner-backend-service
+spec:
+  type: ClusterIP
+  selector:
+    app: travel-planner-backend
+    tier: backend
+  ports:
+  - port: 80
+    targetPort: 8080
