@@ -19,7 +19,7 @@ spec:
         image: zendebudi/travel-planner-backend
         env:
         - name: MYSQL_DB_HOST
-          value: "mysql-service"
+          value: "mysql-service.default"
         - name: MYSQL_DB_USERNAME
           valueFrom:
             secretKeyRef:
@@ -32,8 +32,8 @@ spec:
               key: mysql-password
         resources:
           limits:
-            memory: "128Mi"
-            cpu: "500m"
+            memory: "512Mi"
+            cpu: "1000m"
         ports:
         - containerPort: 8080
 
