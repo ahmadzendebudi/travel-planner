@@ -21,15 +21,9 @@ spec:
         - name: MYSQL_DB_HOST
           value: "mysql-service.default"
         - name: MYSQL_DB_USERNAME
-          valueFrom:
-            secretKeyRef:
-              name: secrets
-              key: mysql-username
+          value: "ahmad"
         - name: MYSQL_DB_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: secrets
-              key: mysql-password
+          value: "1234"
         resources:
           limits:
             memory: "512Mi"

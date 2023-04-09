@@ -18,15 +18,9 @@ spec:
         image: mysql:8.0.32
         env:
         - name: MYSQL_USER
-          valueFrom:
-            secretKeyRef:
-              name: secrets
-              key: mysql-username
+          value: "ahmad"
         - name: MYSQL_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: secrets
-              key: mysql-password
+          value: "1234"
         resources:
           limits:
             memory: "512Mi"
