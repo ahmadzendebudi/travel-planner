@@ -11,7 +11,7 @@ spec:
     metadata:
       labels:
         app: mysql
-      tier: backend
+        tier: backend
     spec:
       containers:
       - name: mysql
