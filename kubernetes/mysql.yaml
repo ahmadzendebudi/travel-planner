@@ -21,6 +21,8 @@ spec:
           value: "ahmad"
         - name: MYSQL_PASSWORD
           value: "1234"
+        - name: MYSQL_ROOT_PASSWORD
+          value: "secret1234"
         resources:
           limits:
             memory: "512Mi"
