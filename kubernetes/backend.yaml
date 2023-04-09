@@ -20,6 +20,16 @@ spec:
         env:
         - name: MYSQL_DB_HOST
           value: "mysql-service"
+        - name: MYSQL_DB_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: secrets
+              key: mysql-username
+        - name: MYSQL_DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: secrets
+              key: mysql-password
         resources:
           limits:
             memory: "128Mi"

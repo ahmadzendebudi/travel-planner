@@ -1,4 +1,9 @@
-FROM nginx:stable-alpine
+FROM node:alpine as base
+WORKDIR /app
+RUN npm install -g @angular/cli
+COPY travel-planner /app
+RUN ng build --configuration production
 
+FROM nginx:stable-alpine as server
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY travel-planner/dist/travel-planner /app/travel-planner
+COPY --from=base app/dist/travel-planner /app/travel-planner
