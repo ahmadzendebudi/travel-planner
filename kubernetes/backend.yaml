@@ -19,11 +19,11 @@ spec:
         image: zendebudi/travel-planner-backend
         env:
         - name: MYSQL_DB_HOST
-          value: "mysql-service.default"
+          value: "travel-planner-zendebudi.mysql.database.azure.com"
         - name: MYSQL_DB_USERNAME
-          value: "ahmad"
+          value: "default-username"
         - name: MYSQL_DB_PASSWORD
-          value: "1234"
+          value: "5UQKxhL$6iz%SQ"
         resources:
           limits:
             memory: "512Mi"
