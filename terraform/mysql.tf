@@ -1,5 +1,5 @@
 resource "azurerm_virtual_network" "mysql_vn" {
-  name                = "vn"
+  name                = "mysql_vn"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   address_space       = ["10.0.0.0/16"]
@@ -10,7 +10,7 @@ resource "azurerm_virtual_network" "mysql_vn" {
 }
 
 resource "azurerm_subnet" "mysql_sn" {
-  name                 = "sn"
+  name                 = "mysql_sn"
   resource_group_name  = azurerm_resource_group.rg.name
   virtual_network_name = azurerm_virtual_network.mysql_vn.name
   address_prefixes     = ["10.0.2.0/24"]
@@ -56,8 +56,8 @@ resource "azurerm_mysql_flexible_server" "db" {
   zone                   = 3
   resource_group_name    = azurerm_resource_group.rg.name
   location               = azurerm_resource_group.rg.location
-  administrator_login    = try(var.mysql_administrator_login, "default-username")
-  administrator_password = try(var.mysql_administrator_password, "5UQKxhL$6iz%SQ")
+  administrator_login    = "default_user"
+  administrator_password = "5UQKxhL$6iz%SQ"
   backup_retention_days  = 7
   delegated_subnet_id    = azurerm_subnet.mysql_sn.id
   private_dns_zone_id    = azurerm_private_dns_zone.mysql_dns.id

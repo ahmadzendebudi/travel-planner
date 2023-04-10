@@ -21,7 +21,7 @@ spec:
         - name: MYSQL_DB_HOST
           value: "travel-planner-zendebudi.mysql.database.azure.com"
         - name: MYSQL_DB_USERNAME
-          value: "default-username"
+          value: "default_user"
         - name: MYSQL_DB_PASSWORD
           value: "5UQKxhL$6iz%SQ"
         resources:
