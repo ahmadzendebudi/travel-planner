@@ -51,6 +51,18 @@ resource "azurerm_private_dns_zone_virtual_network_link" "mysql_dns_link" {
   ]
 }
 
+resource "azurerm_private_dns_zone_virtual_network_link" "aks_dns_link" {
+  name                  = "aks-dns-link"
+  private_dns_zone_name = azurerm_private_dns_zone.mysql_dns.name
+  virtual_network_id    = azurerm_virtual_network.aks_vn.id
+  resource_group_name   = azurerm_resource_group.rg.name
+  depends_on = [
+    azurerm_resource_group.rg,
+    azurerm_virtual_network.aks_vn,
+    azurerm_private_dns_zone.mysql_dns
+  ]
+}
+
 resource "azurerm_mysql_flexible_server" "db" {
   name                   = "travel-planner-zendebudi"
   zone                   = 3

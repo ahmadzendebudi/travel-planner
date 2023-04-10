@@ -17,6 +17,7 @@ spec:
       containers:
       - name: travel-planner-backend
         image: zendebudi/travel-planner-backend
+        imagePullPolicy: Always
         env:
         - name: MYSQL_DB_HOST
           value: "travel-planner-zendebudi.mysql.database.azure.com"

@@ -17,6 +17,7 @@ spec:
       containers:
       - name: travel-planner-frontend
         image: zendebudi/travel-planner-frontend
+        imagePullPolicy: Always
         resources:
           limits:
             memory: "128Mi"
