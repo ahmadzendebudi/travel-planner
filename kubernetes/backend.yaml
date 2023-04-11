@@ -25,10 +25,6 @@ spec:
           value: "default_user"
         - name: MYSQL_DB_PASSWORD
           value: "5UQKxhL$6iz%SQ"
-        resources:
-          limits:
-            memory: "512Mi"
-            cpu: "1000m"
         ports:
         - containerPort: 8080
 

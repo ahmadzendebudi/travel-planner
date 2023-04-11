@@ -7,4 +7,5 @@ RUN ng build --configuration production
 
 FROM nginx:stable-alpine as server
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY --from=base app/dist/travel-planner /app/travel-planner
+COPY --from=base /app/dist/travel-planner /app/travel-planner
+
