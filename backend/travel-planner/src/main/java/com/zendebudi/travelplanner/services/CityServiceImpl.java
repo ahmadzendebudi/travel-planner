@@ -3,10 +3,12 @@ package com.zendebudi.travelplanner.services;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.zendebudi.travelplanner.model.CityEntity;
 import com.zendebudi.travelplanner.repositories.CityRepository;
-
+@Service
 public class CityServiceImpl implements CityService{
 
   @Autowired

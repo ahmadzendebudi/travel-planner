@@ -25,11 +25,16 @@ public class CityController {
 
   @Autowired
   CityService cityService;
+
+  @GetMapping("/test") 
+  public String test(){
+    return "test!";
+  }
   
   @GetMapping("/{name}")
   public CityJson getCity(@PathVariable String name) {
     Optional<CityEntity> cityEntity = cityService.findCityByName(name);
-    if (cityEntity == null) {
+    if (cityEntity.isEmpty()) {
       throw new NotFoundException();
     }
     return new CityJson(cityEntity.get());

@@ -10,11 +10,12 @@ services:
       MYSQL_ROOT_PASSWORD: 1234
       MYSQL_USER: user
       MYSQL_PASSWORD: 1234
-    ports:
-      - 3306:3306
 
   backend:
-    build: ./backend/
+    build:
+      context: ./backend/
+      dockerfile: Dockerfile
+      target: development
     ports:
       - 8080:8080
     environment:
@@ -25,7 +26,13 @@ services:
       - db
 
   frontend:
-    build: ./frontend/
+    build:
+      context: ./frontend/
+      dockerfile: Dockerfile
+      args:
+        BACKEND_HOST: backend:8080
+    
+    restart: always
     ports:
       - 80:80
   adminer:
