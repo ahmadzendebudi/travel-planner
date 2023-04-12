@@ -22,12 +22,16 @@ export class CityPickerComponent implements OnInit, OnDestroy {
       next: cities => {
         this.cities = cities;
       }
-    })
+    });
     this.cityService.requestCities();
   }
 
   ngOnDestroy(): void {
       this.cityListSubscription.unsubscribe();
+  }
+
+  citySelected(cityName: String) {
+    this.cityService.foregroundCity(cityName);
   }
 
 }

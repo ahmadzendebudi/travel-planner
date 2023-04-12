@@ -1,3 +1,3 @@
 <p>city-picker works!</p>
 
-<p *ngFor="let city of cities">{{city.name}}</p>
+<p *ngFor="let city of cities" (click)="citySelected(city.name)">{{city.name}}</p>
