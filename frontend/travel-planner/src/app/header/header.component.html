@@ -1,0 +1,14 @@
+<div class="root">
+  <header class="container">
+    <a [routerLink]="['']">Travel Planner</a>
+    <button class="nav-toggle" (click)="toggleMenu()" >
+      <img *ngIf="!menuOpen" src="../../assets/icons/menu-outline.svg" height="36px" alt="Menu">
+      <img *ngIf="menuOpen" src="../../assets/icons/close-outline.svg" height="36px" alt="Menu">  
+    </button>
+    <nav [ngClass]="{'nav-open': menuOpen}" (click)="menuOpen = false">
+      <ul>
+        <li><a [routerLink]="['contact']">About Project</a></li>
+      </ul>
+    </nav>
+  </header>
+</div>
