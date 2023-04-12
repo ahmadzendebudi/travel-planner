@@ -1,5 +1,6 @@
 package com.zendebudi.travelplanner.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
@@ -10,4 +11,5 @@ import com.zendebudi.travelplanner.model.CityEntity;
 public interface CityService {
   public Optional<CityEntity> findCityById(long id);
   public Optional<CityEntity> findCityByName(String name);
+  public List<CityEntity> findAll();
 }

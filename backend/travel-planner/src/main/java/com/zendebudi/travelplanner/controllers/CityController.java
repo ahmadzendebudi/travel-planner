@@ -2,6 +2,7 @@ package com.zendebudi.travelplanner.controllers;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -26,11 +27,16 @@ public class CityController {
   @Autowired
   CityService cityService;
 
-  @GetMapping("/test") 
-  public String test(){
-    return "test!";
+  @GetMapping(value={"", "/"})
+  public List<Map<String, String>> getAllCities() {
+    return cityService.findAll().stream().map(cityEntity -> {
+      Map<String, String> map = new HashMap<String, String>();
+      map.put("name", cityEntity.getName());
+      map.put("label", cityEntity.getLabel());
+      return map;
+    }).toList();
   }
-  
+
   @GetMapping("/{name}")
   public CityJson getCity(@PathVariable String name) {
     Optional<CityEntity> cityEntity = cityService.findCityByName(name);

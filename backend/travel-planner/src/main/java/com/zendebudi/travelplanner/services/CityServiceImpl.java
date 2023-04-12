@@ -1,5 +1,6 @@
 package com.zendebudi.travelplanner.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,11 @@ public class CityServiceImpl implements CityService{
   @Override
   public Optional<CityEntity> findCityByName(String name) {
     return cityRepository.findByName(name);
+  }
+
+  @Override
+  public List<CityEntity> findAll() {
+    return cityRepository.findAll();
   }
   
 }
