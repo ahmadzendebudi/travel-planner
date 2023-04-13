@@ -8,3 +8,11 @@
   flex-shrink: 0;
   width: 20rem;
 }
+
+@media screen and (max-width: 45em) {
+  .main-container {
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+  }
+}
