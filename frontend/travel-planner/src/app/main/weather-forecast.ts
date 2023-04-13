@@ -1,7 +1,7 @@
-import { WeatherCurrent } from "./weather"
+import { Weather } from "./weather"
 
 export class WeatherForecast{
-  list: WeatherCurrent[]
+  list: Weather[]
   city: {
     name: String,
     timezone: number

@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { ErrorComponent } from './error/error.component';
+import { TempDefaultUnit } from './main/city-weather/temp-default-unit';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ErrorComponent } from './error/error.component';
     HeaderComponent,
     FooterComponent,
     ContactComponent,
-    ErrorComponent
+    ErrorComponent,
+    TempDefaultUnit
   ],
   imports: [
     BrowserModule,
