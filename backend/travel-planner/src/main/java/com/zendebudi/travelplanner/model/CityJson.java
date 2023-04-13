@@ -20,6 +20,16 @@ public class CityJson {
   public String getDescription() {
     return cityEntity.getDescription();
   }
+  
+  @JsonInclude
+  public String getLat() {
+    return cityEntity.getLat();
+  }
+  
+  @JsonInclude
+  public String getLon() {
+    return cityEntity.getLon();
+  }
 
   @JsonInclude
   public String getLabel() {

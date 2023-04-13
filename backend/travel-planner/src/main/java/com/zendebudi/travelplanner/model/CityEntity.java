@@ -26,6 +26,12 @@ public class CityEntity {
 
   @Column(name = "name")
   private String name;
+  
+  @Column(name = "lat")
+  private String lat;
+
+  @Column(name = "lon")
+  private String lon;
 
   @Column(name = "label")
   private String label;
