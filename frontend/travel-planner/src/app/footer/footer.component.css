@@ -1,0 +1,17 @@
+.root {
+  border-top: 1px solid #00000010;
+}
+
+footer {
+  padding: 2rem 4rem;
+  font-size: 1.6rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+@media screen and (min-width: 45em){
+  footer {
+    text-align: start;
+  }
+}

@@ -1,0 +1,16 @@
+.city-item {
+  display: block;
+}
+
+a:link, a:visited{
+  color: #1a9ea3;
+  text-decoration: none;
+  transition: all .3s;
+  padding: 0.5rem 1rem;
+  border-radius: .5rem;
+}
+
+a:hover, a:active{
+  background-color: #00000010;
+  color: #1a9ea3;
+}

@@ -1,0 +1,4 @@
+<ul>
+  <li *ngFor="let city of cities" ><a class="city-item" [routerLink]="['/city', city.name]">{{city.name}}</a></li>
+</ul>
+

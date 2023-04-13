@@ -1,0 +1,13 @@
+<div *ngIf="weatherForeground" class="root">
+  <h3>Weather</h3>
+  <div class="conditions">
+    <div class="condition" *ngFor="let condition of weatherForeground.weather">
+      <img class="weather-condition-icon" [src]="'http://openweathermap.org/img/wn/' + condition.icon + '.png'" width="32px" height="32px">
+      <p class="weather-value-head">{{condition.description}}</p>
+    </div>
+  </div>
+  <p>Current tempreture: <span class="weather-value">{{weatherForeground.main.temp | tempDefaultUnit}}</span></p>
+  <p>Feels like: <span class="weather-value">{{weatherForeground.main.feels_like | tempDefaultUnit}}</span></p>
+  <p>Wind: <span class="weather-value">{{weatherForeground.wind.speed}} m/s</span></p>
+  <p>Humidity: <span class="weather-value">{{weatherForeground.main.humidity}}%</span></p>
+</div>

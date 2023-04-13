@@ -1,8 +1,9 @@
 FROM node:alpine as base
 WORKDIR /app
 RUN npm install -g @angular/cli
-COPY travel-planner /app
+COPY travel-planner/package.json .
 RUN npm install
+COPY travel-planner .
 RUN ng build --configuration production
 
 FROM nginx:stable-alpine as server
