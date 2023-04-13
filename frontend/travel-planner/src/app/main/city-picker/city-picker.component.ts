@@ -30,8 +30,4 @@ export class CityPickerComponent implements OnInit, OnDestroy {
       this.cityListSubscription.unsubscribe();
   }
 
-  citySelected(cityName: String) {
-    this.cityService.foregroundCity(cityName);
-  }
-
 }

@@ -1,10 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { CityService } from '../city.service';
-import { WeatherService } from '../weather.service';
-import { City } from '../city';
+import { CityService } from '../../city.service';
+import { WeatherService } from '../../weather.service';
+import { City } from '../../city';
 import { Subscription } from 'rxjs';
-import { Weather } from '../weather';
-import { WeatherForecast } from '../weather-forecast';
+import { Weather } from '../../weather';
+import { WeatherForecast } from '../../weather-forecast';
 
 @Component({
   selector: 'app-city-weather',

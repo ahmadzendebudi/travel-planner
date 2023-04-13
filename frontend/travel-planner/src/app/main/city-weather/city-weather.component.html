@@ -1,8 +1,0 @@
-<p>city-weather works!</p>
-<div *ngIf="weatherForeground">
-  <p>Current tempreture: {{weatherForeground.main.temp | tempDefaultUnit}}</p>
-  <p>Feels like: {{weatherForeground.main.feels_like | tempDefaultUnit}}</p>
-  <p>Humidity: {{weatherForeground.main.humidity}}</p>
-  <p *ngIf="weatherForeground.weather.length > 0">Condition(s):</p>
-  <p *ngFor="let condition of weatherForeground.weather">{{condition.description}}</p>
-</div>

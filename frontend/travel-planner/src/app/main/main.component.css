@@ -1,0 +1,10 @@
+.main-container {
+  display: flex;
+  padding: 4rem;
+  gap: 2rem;
+}
+
+.city-picker {
+  flex-shrink: 0;
+  width: 20rem;
+}

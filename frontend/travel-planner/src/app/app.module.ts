@@ -6,13 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { CityPickerComponent } from './main/city-picker/city-picker.component';
-import { CityDetailsComponent } from './main/city-details/city-details.component';
-import { CityWeatherComponent } from './main/city-weather/city-weather.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { ErrorComponent } from './error/error.component';
-import { TempDefaultUnit } from './main/city-weather/temp-default-unit';
+import { CityContentComponent } from './main/city-content/city-content.component';
+import { CityDetailsComponent } from './main/city-content/city-details/city-details.component';
+import { CityWeatherComponent } from './main/city-content/city-weather/city-weather.component';
+import { TempDefaultUnit } from './main/city-content/city-weather/temp-default-unit';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { TempDefaultUnit } from './main/city-weather/temp-default-unit';
     FooterComponent,
     ContactComponent,
     ErrorComponent,
-    TempDefaultUnit
+    TempDefaultUnit,
+    CityContentComponent
   ],
   imports: [
     BrowserModule,

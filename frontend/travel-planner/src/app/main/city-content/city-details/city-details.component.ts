@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { CityService } from '../city.service';
-import { City } from '../city';
+import { CityService } from '../../city.service';
+import { City } from '../../city';
 import { Subscription } from 'rxjs';
 
 @Component({
