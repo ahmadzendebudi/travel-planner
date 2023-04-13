@@ -1,1 +1,7 @@
 <p>city-weather works!</p>
+<div *ngIf="weatherForeground">
+  <p>Current tempreture: {{weatherForeground.main.temp}}</p>
+  <p>Feels like: {{weatherForeground.main.feels_like}}</p>
+  <p>Humidity: {{weatherForeground.main.humidity}}</p>
+  <!-- <p>Condition: {{weatherForeground.weather.description}}</p> -->
+</div>
