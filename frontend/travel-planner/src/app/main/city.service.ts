@@ -2,13 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { City } from './city';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CityService {
 
-  private apiEndpoint: string = "/api"
+  private apiEndpoint: string = environment.backendUrl;
 
   private _cityListSubject: Subject<City[]> = new Subject<City[]>();
   private _cityForegroundSubject: Subject<City> = new Subject<City>();

@@ -4,13 +4,14 @@ import { Weather } from './weather';
 import { WeatherForecast } from './weather-forecast';
 import { HttpClient } from '@angular/common/http';
 import { City } from './city';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WeatherService {
 
-  private _apiKey: string = "68bcc85d56b95a7a5af6865ef7cb88f4";
+  private _apiKey: string = environment.weatherApiKey;
 
   private _weatherCurrentSubject: Subject<Weather> = new Subject<Weather>();
   private _weatherForecastSubject: Subject<WeatherForecast> = new Subject<WeatherForecast>();
